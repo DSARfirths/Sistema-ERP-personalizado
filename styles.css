@@ -158,3 +158,10 @@ body {
 .mobile-menu-open {
   max-height: 500px; /* Dale una altura máxima suficiente para que quepan todos los enlaces */
 }
+@media (max-width: 640px) {
+#propuesta a {
+font-size: 1rem; /* Reduce el tamaño de la fuente /
+padding-left: 1.5rem; / Ajusta el padding horizontal */
+padding-right: 1.5rem;
+}
+}

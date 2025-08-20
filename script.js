@@ -1,31 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Lógica del menú móvil (versión mejorada con animación)
+    /// Lógica del menú móvil
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
 
     if (menuBtn && mobileMenu) {
-        // Función para cerrar el menú
-        const closeMenu = () => {
-            mobileMenu.classList.remove('mobile-menu-open');
-        };
-
-        // Función para alternar el menú
-        const toggleMenu = () => {
-            mobileMenu.classList.toggle('mobile-menu-open');
-        };
-
-        // Evento para el botón hamburguesa
-        menuBtn.addEventListener('click', (e) => {
-            e.stopPropagation(); // Evita que otros clicks se disparen
-            toggleMenu();
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
         });
 
-        // Evento para cerrar el menú al hacer clic en un enlace
-        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-        mobileMenuLinks.forEach(link => {
+        document.querySelectorAll('#mobile-menu a, #mobile-menu button').forEach(link => {
             link.addEventListener('click', () => {
-                closeMenu();
+                mobileMenu.classList.add('hidden');
             });
         });
     }
@@ -73,6 +59,11 @@ document.addEventListener('DOMContentLoaded', () => {
         slidesPerView: 1,
         spaceBetween: 20, // Espacio entre slides
         breakpoints: {
+            // Para pantallas menores de 640px (forzamos 1 slide)
+            320: {
+                slidesPerView: 1,
+                spaceBetween: 10, // Podemos reducir un poco el espacio en móviles
+            },
             // para pantallas mayores a 640px
             640: {
                 slidesPerView: 2,
