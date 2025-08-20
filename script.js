@@ -1,17 +1,31 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Lógica del menú móvil
+    // Lógica del menú móvil (versión mejorada con animación)
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
 
     if (menuBtn && mobileMenu) {
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+        // Función para cerrar el menú
+        const closeMenu = () => {
+            mobileMenu.classList.remove('mobile-menu-open');
+        };
+
+        // Función para alternar el menú
+        const toggleMenu = () => {
+            mobileMenu.classList.toggle('mobile-menu-open');
+        };
+
+        // Evento para el botón hamburguesa
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Evita que otros clicks se disparen
+            toggleMenu();
         });
 
-        document.querySelectorAll('#mobile-menu a, #mobile-menu button').forEach(link => {
+        // Evento para cerrar el menú al hacer clic en un enlace
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
             link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
+                closeMenu();
             });
         });
     }
@@ -28,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('section > div').forEach(sectionDiv => {
         observer.observe(sectionDiv);
     });
-    
+
     // --- NUEVA LÓGICA PARA EL ACORDEÓN DE PREGUNTAS FRECUENTES ---
     const faqQuestions = document.querySelectorAll('.faq-question');
 
@@ -82,10 +96,55 @@ document.addEventListener('DOMContentLoaded', () => {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
-        
+
         // Para que se pueda arrastrar con el mouse
         mousewheel: true,
         keyboard: true,
     });
-    
+
+});
+// --- LÓGICA PARA RESALTAR ENLACE ACTIVO EN EL MENÚ ---
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('header nav a');
+
+const observerOptions = {
+    root: null,
+    rootMargin: '-20% 0px -50% 0px',
+    threshold: 0
+};
+
+const sectionObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            navLinks.forEach(link => {
+                link.classList.remove('nav-link-active');
+                if (link.getAttribute('href') === `#${id}`) {
+                    link.classList.add('nav-link-active');
+                }
+            });
+        }
+    });
+}, observerOptions);
+
+sections.forEach(section => {
+    sectionObserver.observe(section);
+});
+
+// --- LÓGICA PARA BOTÓN 'VOLVER ARRIBA' ---
+const backToTopButton = document.getElementById('back-to-top');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) { // Muestra el botón después de 300px de scroll
+        backToTopButton.classList.remove('opacity-0');
+    } else {
+        backToTopButton.classList.add('opacity-0');
+    }
+});
+
+backToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 });

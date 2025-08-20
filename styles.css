@@ -150,3 +150,11 @@ body {
     color: #60a5fa; /* Un azul claro para el hover */
     text-decoration: underline;
 }
+.nav-link-active {
+    color: #2563eb !important; /* El color azul de tu marca */
+    font-weight: 700;
+}
+
+.mobile-menu-open {
+  max-height: 500px; /* Dale una altura máxima suficiente para que quepan todos los enlaces */
+}

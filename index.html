@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Propuesta Estratégica de Sistema a Medida</title>
-
+    <link rel="icon" href="assets/images/AlFactor-consultores-simbolo.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -45,7 +45,7 @@
                 </button>
             </div>
         </nav>
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+        <div id="mobile-menu" class="md:hidden bg-white border-t border-gray-200 transition-all duration-300 ease-in-out overflow-hidden max-h-0">
             <a href="#propuesta" class="block py-3 px-4 text-sm hover:bg-gray-100">Visión</a>
             <a href="#diferencia" class="block py-3 px-4 text-sm hover:bg-gray-100">El Valor Real</a>
             <a href="#hoja-de-ruta" class="block py-3 px-4 text-sm hover:bg-gray-100">Hoja de Ruta</a>
@@ -79,41 +79,45 @@
                     <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">La diferencia fundamental: le proponemos
                         construir un activo para su empresa, no seguir pagando por una herramienta prestada.</p>
                 </div>
-                <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                    <div class="bg-gray-100 p-8 rounded-xl border border-gray-200">
-                        <div class="flex items-center text-red-500 mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-3" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                            </svg>
-                            <h3 class="text-2xl font-bold text-gray-800">El Sistema Actual (Alquiler)</h3>
-                        </div>
-                        <ul class="space-y-3 text-gray-600">
-                            <li><span class="font-bold text-red-500">Es un gasto:</span> Si deja de pagar, se queda sin
-                                nada.</li>
-                            <li><span class="font-bold text-red-500">Es rígido:</span> Le obliga a adaptarse a sus
-                                reglas genéricas.</li>
-                            <li><span class="font-bold text-red-500">Es un callejón sin salida:</span> No puede crecer
-                                ni conectarse a futuro.</li>
+                <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto items-start">
+                    <div class="bg-white p-8 rounded-xl border border-gray-200 text-center">
+                        <img src="assets/images/undraw_apartment-rent_oodr.svg"
+                            alt="Ilustración de un sistema alquilado" class="w-full h-48 object-contain mb-6">
+
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">El Sistema Actual (Alquiler)</h3>
+                        <ul class="space-y-3 text-gray-600 text-left">
+                            <li class="flex items-start"><span class="font-bold text-red-500 mr-2">&#10007;</span>
+                                <span><span class="font-bold">Es un gasto:</span> Si deja de pagar, se queda sin
+                                    nada.</span>
+                            </li>
+                            <li class="flex items-start"><span class="font-bold text-red-500 mr-2">&#10007;</span>
+                                <span><span class="font-bold">Es rígido:</span> Le obliga a adaptarse a sus reglas
+                                    genéricas.</span>
+                            </li>
+                            <li class="flex items-start"><span class="font-bold text-red-500 mr-2">&#10007;</span>
+                                <span><span class="font-bold">Es un callejón sin salida:</span> No puede crecer ni
+                                    conectarse a futuro.</span>
+                            </li>
                         </ul>
                     </div>
-                    <div class="bg-blue-50 p-8 rounded-xl border-2 border-blue-500">
-                        <div class="flex items-center text-blue-600 mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-3" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                            </svg>
-                            <h3 class="text-2xl font-bold text-blue-800">Nuestra Propuesta (Propiedad)</h3>
-                        </div>
-                        <ul class="space-y-3 text-gray-700">
-                            <li><span class="font-bold text-green-500">Es un activo:</span> El código y los datos son
-                                100% de Georiego.</li>
-                            <li><span class="font-bold text-green-500">Es un traje a medida:</span> Se adapta a sus
-                                procesos para máxima eficiencia.</li>
-                            <li><span class="font-bold text-green-500">Es una plataforma de lanzamiento:</span> Lista
-                                para crecer con su visión.</li>
+                    <div class="bg-blue-50 p-8 rounded-xl border-2 border-blue-500 text-center">
+                        <img src="assets/images/undraw_build-your-home_5opd.svg"
+                            alt="Ilustración de un sistema propio a medida" class="w-full h-48 object-contain mb-6">
+
+                        <h3 class="text-2xl font-bold text-blue-800 mb-4">Nuestra Propuesta (Propiedad)</h3>
+                        <ul class="space-y-3 text-gray-700 text-left">
+                            <li class="flex items-start"><span class="font-bold text-green-500 mr-2">&#10003;</span>
+                                <span><span class="font-bold">Es un activo:</span> El código y los datos son 100% de
+                                    Georiego.</span>
+                            </li>
+                            <li class="flex items-start"><span class="font-bold text-green-500 mr-2">&#10003;</span>
+                                <span><span class="font-bold">Es un traje a medida:</span> Se adapta a sus procesos para
+                                    máxima eficiencia.</span>
+                            </li>
+                            <li class="flex items-start"><span class="font-bold text-green-500 mr-2">&#10003;</span>
+                                <span><span class="font-bold">Es una plataforma de lanzamiento:</span> Lista para crecer
+                                    con su visión.</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -245,9 +249,12 @@
                             <h3 class="text-2xl font-bold text-gray-800 ml-4">Delegación Real vs. Asignación de Usuarios
                                 Genérica</h3>
                         </div>
-                        <p class="mt-4 text-gray-600 ml-16">Su sistema actual le permite crear usuarios, sí, <strong>pero</strong> no
-                            le permite crear <strong>reglas de negocio a medida</strong> para delegar con total tranquilidad. No se
-                            trata de dar acceso, se trata de construir un proceso en el que confíe.</p>
+                        <p class="mt-4 text-gray-600 ml-16">Su sistema actual le permite crear usuarios, sí,
+                            <strong>pero</strong> no
+                            le permite crear <strong>reglas de negocio a medida</strong> para delegar con total
+                            tranquilidad. No se
+                            trata de dar acceso, se trata de construir un proceso en el que confíe.
+                        </p>
                         <p class="mt-4 text-gray-600 ml-16 font-semibold">Imagine poder configurar que una cotización
                             necesite su aprobación por WhatsApp si supera cierto monto, o que un vendedor solo vea a sus
                             propios clientes. Eso es control real, y es lo que le dará la libertad de viajar.</p>
@@ -267,8 +274,10 @@
                                 en Excel</h3>
                         </div>
                         <p class="mt-4 text-gray-600 ml-16">Su sistema actual le permite descargar un Excel, sí,
-                            <strong>pero</strong> eso es un trabajo <strong>reactivo</strong>. Le obliga a buscar datos del pasado. Un sistema a
-                            medida le entrega <strong>inteligencia activa</strong> sobre el presente.</p>
+                            <strong>pero</strong> eso es un trabajo <strong>reactivo</strong>. Le obliga a buscar datos
+                            del pasado. Un sistema a
+                            medida le entrega <strong>inteligencia activa</strong> sobre el presente.
+                        </p>
                         <p class="mt-4 text-gray-600 ml-16 font-semibold">Imagine un panel de control en su celular que
                             le muestre las ventas del día en tiempo real, le alerte si el stock de un producto clave es
                             bajo, o le indique qué vendedor está superando sus metas. No es un reporte, es el pulso de
@@ -393,6 +402,22 @@
                         <p class="text-gray-600 mb-4">Construimos la primera versión funcional de su nuevo activo
                             digital, con todas las herramientas para la operación diaria y la delegación segura.</p>
                         <div class="bg-white p-4 rounded-lg border border-gray-200">
+                            <p class="font-bold">&#128229; Funcionalidades Incluidas:</p>
+                            <ul class="list-disc list-inside text-gray-600 ml-4 mt-2 space-y-2">
+                                <li><strong>Gestión de Usuarios y Seguridad por Roles:</strong> Perfiles de
+                                    Administrador, Vendedor y Almacén con permisos definidos para proteger su
+                                    información.</li>
+                                <li><strong>Catálogo de Productos y Servicios:</strong> Administración centralizada de
+                                    todo lo que ofrecen.</li>
+                                <li><strong>Control de Inventario Básico:</strong> Registro de entradas y salidas para
+                                    un seguimiento de stock en tiempo real.</li>
+                                <li><strong>Gestión de Cotizaciones y Notas de Venta:</strong> Creación, seguimiento y
+                                    gestión de todo el ciclo comercial.</li>
+                                <li><strong>Base de Datos de Clientes y Proveedores:</strong> Un directorio central para
+                                    todos sus contactos de negocio.</li>
+                                <li><strong>Reportes de Ventas:</strong> Podrán consultar sus ventas por fecha, cliente
+                                    o producto para tomar decisiones informadas.</li>
+                            </ul>
                             <p class="mt-4"><strong>&#9200; Tiempo Estimado de Entrega:</strong> 8 - 10 Semanas</p>
                         </div>
                     </div>
@@ -525,8 +550,10 @@
                         <h3 class="text-2xl font-bold mt-6 mb-4 text-center">La Oferta "Socio Estratégico": Solución
                             Integral 2025</h3>
                         <p class="text-gray-600 text-center mb-6">Para Georiego, que busca una transformación completa y
-                            sin preocupaciones, ofrecemos un paquete que incluye las <strong>Fases 0, I y todos los módulos de
-                            expansión</strong> a un precio preferencial, junto con nuestro compromiso total durante el primer
+                            sin preocupaciones, ofrecemos un paquete que incluye las <strong>Fases 0, I y todos los
+                                módulos de
+                                expansión</strong> a un precio preferencial, junto con nuestro compromiso total durante
+                            el primer
                             año.</p>
 
                         <div class="bg-white/50 rounded-lg p-6">
@@ -549,7 +576,8 @@
                                     </ul>
                                 </div>
                             </div>
-                            <p class="promo-pulse-animation text-center mt-4 text-2xl font-bold text-green-600">¡Ahorro Total de S/ 4,600!</p>
+                            <p class="promo-pulse-animation text-center mt-4 text-2xl font-bold text-green-600">¡Ahorro
+                                Total de S/ 4,600!</p>
                         </div>
                     </div>
                 </div>
@@ -568,22 +596,34 @@
                         <div class="faq-question flex justify-between items-center p-6 cursor-pointer">
                             <h4 class="font-bold text-lg text-gray-800">¿Qué pasa si necesito un cambio durante el
                                 desarrollo?</h4>
-                            <svg class="faq-icon w-6 h-6 text-gray-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            <svg class="faq-icon w-6 h-6 text-gray-500 transition-transform duration-300" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
                         </div>
                         <div class="faq-answer">
-                            <p class="p-6 pt-0 text-gray-600">Nuestra metodología es flexible. Mantenemos una comunicación
-                                constante. Cambios menores se incorporan sin problema. Si un cambio es grande, lo evaluamos
+                            <p class="p-6 pt-0 text-gray-600">Nuestra metodología es flexible. Mantenemos una
+                                comunicación
+                                constante. Cambios menores se incorporan sin problema. Si un cambio es grande, lo
+                                evaluamos
                                 juntos de forma transparente para decidir el mejor camino.</p>
                         </div>
                     </div>
                     <div class="faq-item bg-white rounded-lg border border-gray-200 overflow-hidden">
                         <div class="faq-question flex justify-between items-center p-6 cursor-pointer">
-                            <h4 class="font-bold text-lg text-gray-800">¿El sistema será difícil de usar para mis empleados?
+                            <h4 class="font-bold text-lg text-gray-800">¿El sistema será difícil de usar para mis
+                                empleados?
                             </h4>
-                            <svg class="faq-icon w-6 h-6 text-gray-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            <svg class="faq-icon w-6 h-6 text-gray-500 transition-transform duration-300" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
                         </div>
                         <div class="faq-answer">
-                            <p class="p-6 pt-0 text-gray-600">Al contrario. Diseñamos cada pantalla pensando en la facilidad de
+                            <p class="p-6 pt-0 text-gray-600">Al contrario. Diseñamos cada pantalla pensando en la
+                                facilidad de
                                 uso. Al ser un sistema hecho a medida, eliminamos toda la complejidad y los botones
                                 innecesarios de los sistemas genéricos. Además, la capacitación está incluida.</p>
                         </div>
@@ -591,11 +631,17 @@
                     <div class="faq-item bg-white rounded-lg border border-gray-200 overflow-hidden">
                         <div class="faq-question flex justify-between items-center p-6 cursor-pointer">
                             <h4 class="font-bold text-lg text-gray-800">¿Qué garantiza que mi inversión es segura?</h4>
-                            <svg class="faq-icon w-6 h-6 text-gray-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            <svg class="faq-icon w-6 h-6 text-gray-500 transition-transform duration-300" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
                         </div>
                         <div class="faq-answer">
-                            <p class="p-6 pt-0 text-gray-600">Tres cosas: 1) El pago es por fases y contra entregables. 2) Desde
-                                el primer día, el código fuente y la base de datos son de su propiedad. 3) Nuestro modelo de
+                            <p class="p-6 pt-0 text-gray-600">Tres cosas: 1) El pago es por fases y contra entregables.
+                                2) Desde
+                                el primer día, el código fuente y la base de datos son de su propiedad. 3) Nuestro
+                                modelo de
                                 negocio se basa en relaciones a largo plazo, por lo que su éxito es nuestro éxito.</p>
                         </div>
                     </div>
@@ -694,7 +740,7 @@
                 </p>
             </div>
         </section>
-        
+
         <section class="py-20 bg-gray-100">
             <div class="container mx-auto px-4 sm:px-6">
                 <div class="text-center mb-16">
@@ -773,16 +819,26 @@
 
     <footer class="bg-gray-800 text-white py-8">
         <div class="container mx-auto px-4 sm:px-6 text-center">
-            <p class="font-bold">Propuesta preparada por <a href="https://dsarfirths.github.io/" target="_blank" rel="noopener noreferrer" class="footer-link">Diego Abad</a></p>
+            <p class="font-bold">Propuesta preparada por <a href="https://dsarfirths.github.io/" target="_blank"
+                    rel="noopener noreferrer" class="footer-link">Diego Abad</a></p>
             <p class="text-lg">Alfactor Consultores</p>
             <p class="text-sm text-gray-400 mt-2">
-                <a href="mailto:dsarfirths@gmail.com" class="footer-link">dsarfirths@gmail.com</a> | <a href="https://wa.me/51924281623" target="_blank" rel="noopener noreferrer" class="footer-link">+51 924 281 623</a>
+                <a href="mailto:dsarfirths@gmail.com" class="footer-link">dsarfirths@gmail.com</a> | <a
+                    href="https://wa.me/51924281623" target="_blank" rel="noopener noreferrer" class="footer-link">+51
+                    924 281 623</a>
             </p>
         </div>
     </footer>
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
+
+    <button id="back-to-top"
+        class="fixed bottom-5 right-5 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-opacity duration-300 opacity-0 z-50">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+        </svg>
+    </button>
 </body>
 
 </html>
