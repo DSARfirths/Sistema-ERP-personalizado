@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    /// Lógica del menú móvil
+    // Lógica del menú móvil
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
 
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
             mobileMenu.classList.toggle('hidden');
         });
 
-        document.querySelectorAll('#mobile-menu a, #mobile-menu button').forEach(link => {
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
@@ -28,114 +28,58 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('section > div').forEach(sectionDiv => {
         observer.observe(sectionDiv);
     });
+    
+    // Lógica para resaltar enlace activo en el menú
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('header .nav-link');
 
-    // --- NUEVA LÓGICA PARA EL ACORDEÓN DE PREGUNTAS FRECUENTES ---
-    const faqQuestions = document.querySelectorAll('.faq-question');
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px 0px -60% 0px', // Activa cuando la sección está en el 40% superior de la pantalla
+        threshold: 0
+    };
 
-    faqQuestions.forEach(question => {
-        question.addEventListener('click', () => {
-            const answer = question.nextElementSibling;
-            const icon = question.querySelector('.faq-icon');
-
-            // Cierra otros acordeones abiertos si quieres que solo uno esté abierto a la vez
-            // Comenta este bloque si prefieres que varios puedan estar abiertos
-            document.querySelectorAll('.faq-answer.open').forEach(openAnswer => {
-                if (openAnswer !== answer) {
-                    openAnswer.classList.remove('open');
-                    openAnswer.previousElementSibling.querySelector('.faq-icon').classList.remove('open');
-                }
-            });
-
-            // Abre o cierra el actual
-            answer.classList.toggle('open');
-            icon.classList.toggle('open');
+    const sectionObserver = new IntersectionObserver((entries) => {
+        let activeId = null;
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                 if(!activeId){ // Solo toma el primero que intersecta desde arriba
+                    activeId = entry.target.getAttribute('id');
+                 }
+            }
         });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            const href = link.getAttribute('href');
+            if (href === `#${activeId}`) {
+                link.classList.add('active');
+            }
+        });
+
+    }, observerOptions);
+
+    sections.forEach(section => {
+        sectionObserver.observe(section);
     });
 
+    // Lógica para botón 'Volver Arriba'
+    const backToTopButton = document.getElementById('back-to-top');
 
-    // --- LÓGICA PARA INICIALIZAR EL CARRUSEL (SWIPER.JS) ---
-    const swiper = new Swiper('.swiper-container', {
-        // Cuántos slides se ven a la vez (responsive)
-        slidesPerView: 1,
-        spaceBetween: 20, // Espacio entre slides
-        breakpoints: {
-            // Para pantallas menores de 640px (forzamos 1 slide)
-            320: {
-                slidesPerView: 1,
-                spaceBetween: 10, // Podemos reducir un poco el espacio en móviles
-            },
-            // para pantallas mayores a 640px
-            640: {
-                slidesPerView: 2,
-                spaceBetween: 30,
-            },
-            // para pantallas mayores a 1024px
-            1024: {
-                slidesPerView: 3,
-                spaceBetween: 40,
-            },
-        },
+    if (backToTopButton) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.remove('opacity-0');
+            } else {
+                backToTopButton.classList.add('opacity-0');
+            }
+        });
 
-        // Paginación (los puntos de abajo)
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-
-        // Navegación (las flechas)
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-
-        // Para que se pueda arrastrar con el mouse
-        mousewheel: true,
-        keyboard: true,
-    });
-
-});
-// --- LÓGICA PARA RESALTAR ENLACE ACTIVO EN EL MENÚ ---
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('header nav a');
-
-const observerOptions = {
-    root: null,
-    rootMargin: '-20% 0px -50% 0px',
-    threshold: 0
-};
-
-const sectionObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const id = entry.target.getAttribute('id');
-            navLinks.forEach(link => {
-                link.classList.remove('nav-link-active');
-                if (link.getAttribute('href') === `#${id}`) {
-                    link.classList.add('nav-link-active');
-                }
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
             });
-        }
-    });
-}, observerOptions);
-
-sections.forEach(section => {
-    sectionObserver.observe(section);
-});
-
-// --- LÓGICA PARA BOTÓN 'VOLVER ARRIBA' ---
-const backToTopButton = document.getElementById('back-to-top');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) { // Muestra el botón después de 300px de scroll
-        backToTopButton.classList.remove('opacity-0');
-    } else {
-        backToTopButton.classList.add('opacity-0');
+        });
     }
-});
-
-backToTopButton.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
 });

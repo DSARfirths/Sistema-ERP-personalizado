@@ -21,6 +21,7 @@ body {
     letter-spacing: -0.025em;
 }
 
+/* --- ESTILOS TIMELINE --- */
 .timeline-item::before {
     content: '';
     position: absolute;
@@ -53,6 +54,8 @@ body {
     background-color: #2563eb; /* bg-blue-600 */
 }
 
+
+/* --- ANIMACIONES --- */
 @keyframes fadeIn {
     from { 
         opacity: 0; 
@@ -68,46 +71,6 @@ body {
     animation: fadeIn 0.5s ease-out forwards;
 }
 
-/* --- ESTILOS PARA EL CARRUSEL (SWIPER.JS) --- */
-.swiper-container {
-    padding-bottom: 50px !important; /* Espacio para la paginación */
-}
-
-.swiper-pagination-bullet {
-    background-color: #a0aec0 !important; /* Color de los puntos de paginación */
-    width: 12px !important;
-    height: 12px !important;
-}
-
-.swiper-pagination-bullet-active {
-    background-color: #2563eb !important; /* Color del punto activo */
-}
-
-.swiper-button-next,
-.swiper-button-prev {
-    color: #2563eb !important; /* Color de las flechas de navegación */
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-}
-
-.swiper-button-next {
-    right: -10px !important;
-}
-
-.swiper-button-prev {
-    left: -10px !important;
-}
-
-@media (max-width: 768px) {
-    .swiper-button-next,
-    .swiper-button-prev {
-        display: none !important; /* Ocultar flechas en móviles */
-    }
-}
-
-/* --- NUEVOS ESTILOS AÑADIDOS --- */
-
-/* 2. Animación para texto de Ahorro Total */
 @keyframes promo-pulse {
     0%, 100% {
         transform: scale(1);
@@ -121,47 +84,31 @@ body {
     animation: promo-pulse 2.5s infinite ease-in-out;
 }
 
-/* 3. Estilos para el acordeón de Preguntas Frecuentes */
-.faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease-in-out;
-}
 
-.faq-answer.open {
-    max-height: 200px; /* Ajustar si el contenido es más largo */
-}
-
-.faq-icon.open {
-    transform: rotate(180deg);
-}
-
-/* 5. Estilos para los íconos de tecnología */
-.tech-icon {
-    font-size: 5rem; /* Equivalente a h-20/w-20 de Tailwind */
-}
-
-/* 6. Estilos para enlaces del footer */
-.footer-link {
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-.footer-link:hover {
-    color: #60a5fa; /* Un azul claro para el hover */
-    text-decoration: underline;
-}
-.nav-link-active {
+/* --- ESTILOS NAVEGACIÓN Y FOOTER --- */
+.nav-link.active {
     color: #2563eb !important; /* El color azul de tu marca */
     font-weight: 700;
 }
 
-.mobile-menu-open {
-  max-height: 500px; /* Dale una altura máxima suficiente para que quepan todos los enlaces */
+.footer-link {
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
+
+.footer-link:hover {
+    color: #60a5fa; /* Un azul claro para el hover */
+    text-decoration: underline;
+}
+
+/* --- RESPONSIVE --- */
 @media (max-width: 640px) {
-#propuesta a {
-font-size: 1rem; /* Reduce el tamaño de la fuente /
-padding-left: 1.5rem; / Ajusta el padding horizontal */
-padding-right: 1.5rem;
-}
+    #propuesta a {
+        font-size: 1rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    .section-title {
+        font-size: 1.875rem; /* text-3xl */
+    }
 }
